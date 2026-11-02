@@ -1,0 +1,21 @@
+{
+  "name": "Global Skills Advancement Center",
+  "short_name": "GSAC",
+  "description": "Professional training, corporate capability building, and high-impact learning experiences across Africa and beyond.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0B1F3A",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

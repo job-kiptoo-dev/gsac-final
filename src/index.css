@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   GSAC brand: Deep Navy · Champagne Gold · White · Light Teal
+   (colour tokens live in tailwind.config.js)
+   ───────────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', 'Montserrat', system-ui, sans-serif;
+    @apply text-gray-800 bg-white;
+  }
+  h1, h2 { @apply font-sans font-bold text-navy; }
+  h3 { @apply font-sans font-semibold text-navy; }
+  ::selection { background: #7ED6CE; color: #0B1F3A; }
+}
+
+@layer components {
+  /* Primary action: Deep Navy */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-navy text-white font-bold px-6 py-3 rounded-full hover:bg-navy-700 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+  /* Secondary: navy outline */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white text-navy font-bold px-6 py-3 rounded-full border-2 border-navy hover:bg-navy hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+  /* Highlight CTA: Champagne Gold with navy text (7.4:1 contrast) */
+  .btn-gold {
+    @apply inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-full hover:bg-gold/90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+  /* For use on dark (navy) backgrounds */
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 bg-transparent text-white font-bold px-6 py-3 rounded-full border-2 border-white hover:bg-white hover:text-navy transition-all duration-300;
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 text-gold-dark text-xs font-bold uppercase tracking-widest mb-3;
+  }
+  .section-title-h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-black text-navy leading-tight;
+  }
+  .section-title-h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-black text-navy leading-tight;
+  }
+  .section-title-h3 {
+    @apply text-xl md:text-2xl font-bold text-teal-deep leading-tight;
+  }
+  .card {
+    @apply bg-white rounded-xl2 shadow-card border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md rounded-xl3 shadow-glass border border-white/60;
+  }
+  .tag-pill {
+    @apply inline-block text-xs font-semibold px-3 py-1 rounded-full;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-dark focus:border-transparent text-gray-800 bg-white transition-all;
+  }
+  .orange-divider {
+    @apply w-16 h-1 bg-gold rounded-full my-4;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #0B1F3A; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #17365F; }
+
+/* Marquee container */
+.marquee-container { overflow: hidden; }
+.marquee-track { display: flex; width: max-content; }
+.marquee-track.animate { animation: marquee 30s linear infinite; }
+
+/* Hero blob */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Mega-menu panel entrance */
+@keyframes megaIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mega-panel { animation: megaIn 0.16s ease-out; }
